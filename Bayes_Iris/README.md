@@ -76,7 +76,7 @@ def SelectLabel(names, Prob):
 $$  P(c|x) = \frac{P(c)}{P(x)}\prod_{i = 1}^{d}P(xi|c)$$
 在假定$P(x)$都一样的情况下比较分子大小即可
 $P(c)$容易获得, 而$P(xi|c)$应依赖于下面的公式:
-$$ P(xi|c) = \frac{1}{\sqrt{2\pi}\sigma_{c,i}}\exp{\big(-\frac{(xi-\mu_{c,i})^2}{2\sigma_{c,i}^2}\big)}$$
+![](http://latex.codecogs.com/gif.latex?\\P(xi|c) = \frac{1}{\sqrt{2\pi}\sigma_{c,i}}\exp{\big(-\frac{(xi-\mu_{c,i})^2}{2\sigma_{c,i}^2}\big)})
 
 所以只需要根据样本数据集估算$\sigma$和$\mu$即可:
 
