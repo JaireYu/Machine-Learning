@@ -70,17 +70,21 @@ def SelectLabel(names, Prob):
 ```
 ### 3. 理论解释
 
-我们要估计的是$p(c|x)$, 对于不同的c我们选择其中较大的
+我们要估计的是p(c|x), 对于不同的c我们选择其中较大的
 
 根据朴素Bayes的思想:
-$$  P(c|x) = \frac{P(c)}{P(x)}\prod_{i = 1}^{d}P(xi|c)$$
-在假定$P(x)$都一样的情况下比较分子大小即可
-$P(c)$容易获得, 而$P(xi|c)$应依赖于下面的公式:
-$$ P(xi|c) = \frac{1}{\sqrt{2\pi}\sigma_{c,i}}\exp{\big(-\frac{(xi-\mu_{c,i})^2}{2\sigma_{c,i}^2}\big)}$$
 
-所以只需要根据样本数据集估算$\sigma$和$\mu$即可:
+<img src="http://latex.codecogs.com/gif.latex?P(c|x) = \frac{P(c)}{P(x)}\prod_{i = 1}^{d}P(xi|c)" />
 
-* CalEverageAndDeviation函数分别计算第i个类别第j个属性的$\sigma$和$\mu$写入ParameterMat中, 组成3X4numpy数组, 并同时计算$P(c)$
+在假定P(x)都一样的情况下比较分子大小即可
+P(c)容易获得, 而P(xi|c)应依赖于下面的公式:
+
+ <img src="http://latex.codecogs.com/gif.latex?P(xi|c)=\frac{1}{\sqrt{2\pi}\sigma_{c,i}}\exp{\big(-\frac{(xi-\mu_{c,i})^2}{2\sigma_{c,i}^2}\big)}" />
+
+
+所以只需要根据样本数据集估算σ和μ即可:
+
+* CalEverageAndDeviation函数分别计算第i个类别第j个属性的σ和μ写入ParameterMat中, 组成3X4numpy数组, 并同时计算P(c)
 * Probability函数计算分子的概率密度大小(先取log,再用exp)
 * SelectLabel取概率最大的并返回标签
 
