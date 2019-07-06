@@ -74,12 +74,12 @@ def SelectLabel(names, Prob):
 
 根据朴素Bayes的思想:
 
-<img src="http://latex.codecogs.com/gif.latex?P(c|x) = \frac{P(c)}{P(x)}\prod_{i = 1}^{d}P(xi|c)" />
+$$P(c|x) = \frac{P(c)}{P(x)}\prod_{i = 1}^{d}P(xi|c)$$
 
 在假定P(x)都一样的情况下比较分子大小即可
 P(c)容易获得, 而P(xi|c)应依赖于下面的公式:
 
- <img src="http://latex.codecogs.com/gif.latex?P(xi|c)=\frac{1}{\sqrt{2\pi}\sigma_{c,i}}\exp{\big(-\frac{(xi-\mu_{c,i})^2}{2\sigma_{c,i}^2}\big)}" />
+$$P(xi|c)=\frac{1}{\sqrt{2\pi}\sigma_{c,i}}\exp{\big(-\frac{(xi-\mu_{c,i})^2}{2\sigma_{c,i}^2}\big)}$$
 
 
 所以只需要根据样本数据集估算σ和μ即可:
