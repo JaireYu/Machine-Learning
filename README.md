@@ -12,3 +12,8 @@
 ### Bayes
 
 通过贝叶斯公式计算概率，选择概率最大者
+
+## 词汇
+shrinking heuristic 收缩式启发
+Coefficient 系数
+Independent term 独立项
